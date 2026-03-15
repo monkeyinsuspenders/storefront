@@ -1,216 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penn Fakes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #0b0b0b;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-<title>Penn Fakes</title>
+    .navbar {
+      background: #0b0b0b;
+      border-bottom: 1px solid #1f1f1f;
+    }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-<style>
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+    }
 
-body{
-background:#0b0b0b;
-color:white;
-font-family:Arial, Helvetica, sans-serif;
-}
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
 
-.navbar{
-background:#0b0b0b;
-border-bottom:1px solid #1f1f1f;
-}
+    .hero p {
+      color: #aaaaaa;
+    }
 
-.navbar-brand{
-font-weight:700;
-letter-spacing:1px;
-}
+    .section-title {
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
 
-.hero{
-padding:100px 0;
-text-align:center;
-}
+    .product-card {
+      background: #111111;
+      border: 1px solid #1e1e1e;
+      border-radius: 10px;
+      transition: 0.2s;
+      overflow: hidden;
+      height: 100%;
+    }
 
-.hero h1{
-font-size:3rem;
-font-weight:700;
-margin-bottom:10px;
-}
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: #333333;
+    }
 
-.hero p{
-color:#aaaaaa;
-}
+    .product-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      background: #1a1a1a;
+      display: block;
+    }
 
-.section-title{
-font-weight:600;
-margin-bottom:40px;
-}
+    .price {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
 
-.product-card{
-background:#111111;
-border:1px solid #1e1e1e;
-border-radius:10px;
-transition:0.2s;
-}
+    .btn-custom {
+      background: white;
+      color: black;
+      border: none;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 10px 18px;
+    }
 
-.product-card:hover{
-transform:translateY(-4px);
-border-color:#333333;
-}
+    .btn-custom:hover {
+      background: #dddddd;
+      color: black;
+    }
 
-.product-card img{
-width:100%;
-height:260px;
-object-fit:cover;
-background:#1a1a1a;
-}
-
-.price{
-font-weight:700;
-font-size:1.1rem;
-margin-top:10px;
-}
-
-.btn-custom{
-background:white;
-color:black;
-border:none;
-font-weight:600;
-}
-
-.btn-custom:hover{
-background:#dddddd;
-}
-
-footer{
-margin-top:80px;
-padding:30px 0;
-border-top:1px solid #1f1f1f;
-color:#777777;
-font-size:14px;
-text-align:center;
-}
-
-</style>
-
+    footer {
+      margin-top: 80px;
+      padding: 30px 0;
+      border-top: 1px solid #1f1f1f;
+      color: #777777;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
 </head>
-
 <body>
 
-<nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand text-white text-decoration-none" href="index.html">Penn Fakes</a>
+    </div>
+  </nav>
 
-<div class="container">
+  <section class="hero">
+    <div class="container">
+      <h1>Penn Fakes</h1>
+      <p>Custom pieces made to order</p>
+    </div>
+  </section>
 
-<a class="navbar-brand text-white" href="#">Penn Fakes</a>
+  <section class="container">
+    <h2 class="section-title">Products</h2>
 
-</div>
+    <div class="row g-4">
 
-</nav>
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="images/badge.jpg" alt="Badge">
+          <div class="card-body">
+            <h5>Badge</h5>
+            <div class="price">$85</div>
+            <a href="card.html?product=badge" class="btn btn-custom mt-3">Customize</a>
+          </div>
+        </div>
+      </div>
 
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="images/premium.jpg" alt="Premium Badge">
+          <div class="card-body">
+            <h5>Premium Badge</h5>
+            <div class="price">$85</div>
+            <a href="card.html?product=premium" class="btn btn-custom mt-3">Customize</a>
+          </div>
+        </div>
+      </div>
 
-<section class="hero">
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="images/holographic.jpg" alt="Holographic Badge">
+          <div class="card-body">
+            <h5>Holographic Badge</h5>
+            <div class="price">$85</div>
+            <a href="card.html?product=holographic" class="btn btn-custom mt-3">Customize</a>
+          </div>
+        </div>
+      </div>
 
-<div class="container">
+    </div>
+  </section>
 
-<h1>Penn Fakes</h1>
-
-<p>Custom pieces made to order</p>
-
-</div>
-
-</section>
-
-
-<section class="container">
-
-<h2 class="section-title">Products</h2>
-
-<div class="row g-4">
-
-
-<!-- PRODUCT -->
-
-<div class="col-md-4">
-
-<div class="card product-card">
-
-<img src="https://via.placeholder.com/600">
-
-<div class="card-body">
-
-<h5>Product 1</h5>
-
-<div class="price">$85</div>
-
-<a href="card.html" class="btn btn-custom mt-3">Customize</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="col-md-4">
-
-<div class="card product-card">
-
-<img src="https://via.placeholder.com/600">
-
-<div class="card-body">
-
-<h5>Product 2</h5>
-
-<div class="price">$85</div>
-
-<a href="card.html" class="btn btn-custom mt-3">Customize</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="col-md-4">
-
-<div class="card product-card">
-
-<img src="https://via.placeholder.com/600">
-
-<div class="card-body">
-
-<h5>Product 3</h5>
-
-<div class="price">$85</div>
-
-<button class="btn btn-custom mt-3">Customize</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<footer>
-
-<div class="container">
-
-Penn Fakes • Custom Orders
-
-</div>
-
-</footer>
-
+  <footer>
+    <div class="container">
+      Penn Fakes • Custom Orders
+    </div>
+  </footer>
 
 </body>
-
 </html>
