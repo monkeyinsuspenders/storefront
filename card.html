@@ -266,41 +266,6 @@
               <a href="index.html" class="btn btn-outline-light">Back</a>
             </div>
           </form>
-
-          <div class="helper-box">
-            <div class="fw-semibold mb-2">How to add new safe fields later</div>
-            <div class="muted mb-2">1. Add a new form field inside the form.</div>
-            <div class="muted mb-2">2. Give it a unique <code>id</code>.</div>
-            <div class="muted mb-2">3. Add a matching preview element if you want it shown on the badge.</div>
-            <div class="muted mb-0">4. Add one JavaScript line in <code>bindText()</code> near the bottom.</div>
-          </div>
-
-          <div class="helper-box">
-            <div class="fw-semibold mb-2">Example: add an Office Location field</div>
-<pre class="mb-0" style="white-space: pre-wrap; color: #d8d8d8;">
-&lt;div class="mt-3"&gt;
-  &lt;label class="form-label" for="officeLocation"&gt;Office Location&lt;/label&gt;
-  &lt;input type="text" class="form-control" id="officeLocation"&gt;
-&lt;/div&gt;
-</pre>
-          </div>
-
-          <div class="helper-box">
-            <div class="fw-semibold mb-2">Example preview block</div>
-<pre class="mb-0" style="white-space: pre-wrap; color: #d8d8d8;">
-&lt;div class="badge-line"&gt;
-  &lt;div class="small-label"&gt;Office&lt;/div&gt;
-  &lt;div id="previewOfficeLocation"&gt;Philadelphia&lt;/div&gt;
-&lt;/div&gt;
-</pre>
-          </div>
-
-          <div class="helper-box">
-            <div class="fw-semibold mb-2">Example JavaScript binding line</div>
-<pre class="mb-0" style="white-space: pre-wrap; color: #d8d8d8;">
-bindText("officeLocation", "previewOfficeLocation", "Philadelphia");
-</pre>
-          </div>
         </div>
       </div>
     </div>
