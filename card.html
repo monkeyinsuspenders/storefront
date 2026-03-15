@@ -280,6 +280,8 @@
   </main>
 
   <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxZonGZM7N6BVH78p8QE-HoZ5luBYkdc8GkZImIX8hmxE-ZzvypBTymVGhb6NNJ1NkOuw/exec";
+    
     const params = new URLSearchParams(window.location.search);
     const rawProduct = params.get("product") || "arizona";
 
@@ -348,14 +350,10 @@
         restrictions: document.getElementById("restrictions").value,
         donor: document.getElementById("donor").value,
         dups: document.getElementById("dups").value,
-        headshot: document.getElementById("headshotUpload").value,
-        logo: document.getElementById("sigUpload").value
+        headshotUpload: document.getElementById("headshotUpload").value,
+        sigUpload: document.getElementById("sigUpload").value
       };
-    
-      await fetch(scriptURL,{
-        method:"POST",
-        body:JSON.stringify(data)
-      });
+  
       
       alert("Thank you for ordering " + productName + ", your order has been recorded. Add @pennfakes on snapchat for payment information.");
       
