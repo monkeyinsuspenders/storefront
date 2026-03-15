@@ -318,8 +318,15 @@
     });
 
     document.getElementById("badgeForm").addEventListener("submit", function (e) {
+
+      if (!this.checkValidity()) {
+        return;
+      }
+      
       e.preventDefault();
+      
       alert("Thank you for ordering " + productName + ", your order has been recorded. Add @pennfakes on snapchat for payment information.");
+      
       window.location.href = "index.html";
     });
   </script>
