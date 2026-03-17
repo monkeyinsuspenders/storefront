@@ -280,7 +280,7 @@
   </main>
 
   <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbypxXzSQEerIXusCrBMow9VDX7Cn66rM27ncNY1uZVEVUqnFYa9-e8s4hrpc3IC6H2AJg/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwFDMtUjSnYCDgVgUbs0Cv8Cf9TBIMz6RR69yUSkp8mvDm10D--REjZqFIqtdfZcDycOA/exec";
     
     const params = new URLSearchParams(window.location.search);
     const rawProduct = params.get("product") || "arizona";
@@ -319,7 +319,7 @@
       imageElement.src = "https://via.placeholder.com/400x260?text=" + encodeURIComponent(productName);
     });
 
-    document.getElementById("badgeForm").addEventListener("submit", function (e) {
+    document.getElementById("badgeForm").addEventListener("submit", async function (e) {
 
       if (!this.checkValidity()) {
         e.preventDefault();
@@ -329,6 +329,18 @@
       }
       
       e.preventDefault();
+
+      const headshotFile = document.getElementById("headshotUpload").files[0];
+      const sigFile = document.getElementById("sigUpload").files[0];
+
+      function fileToBase64(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = error => reject(error);
+        });
+      }
     
       const data = {
         productName: productName,
@@ -347,12 +359,15 @@
         restrictions: document.getElementById("restrictions").value,
         donor: document.getElementById("donor").value,
         dups: document.getElementById("dups").value,
-        headshotUpload: document.getElementById("headshotUpload").value,
-        sigUpload: document.getElementById("sigUpload").value
+        headshot: headshotFile ? await fileToBase64(headshotFile) : null,
+        signature: sigFile ? await fileToBase64(sigFile) : null
       };
 
-      fetch(scriptURL,{
+      await fetch(scriptURL,{
         method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
         body:JSON.stringify(data)
       });
                   
