@@ -319,40 +319,76 @@
       imageElement.src = "https://via.placeholder.com/400x260?text=" + encodeURIComponent(productName);
     });
 
-    document.getElementById("badgeForm").addEventListener("submit", async function (e) {
+    const backendURL = "http://localhost:3000/api/orders";
 
+    document.getElementById("badgeForm").addEventListener("submit", async function (e) {
+    
       if (!this.checkValidity()) {
         e.preventDefault();
         e.stopPropagation();
         this.classList.add("was-validated");
         return;
       }
-      
+    
       e.preventDefault();
-
-      const headshotFile = document.getElementById("headshotUpload").files[0];
-      const sigFile = document.getElementById("sigUpload").files[0];
-
-      function fileToBase64(file, maxWidth = 800) {
-        return new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.readAsDataURL(file);
-          reader.onload = (e) => {
-            const img = new Image();
-            img.src = e.target.result;
-            img.onload = () => {
-              const canvas = document.createElement("canvas");
-              const scale = Math.min(1, maxWidth / img.width);
-              canvas.width = img.width * scale;
-              canvas.height = img.height * scale;
-              canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
-              resolve(canvas.toDataURL("image/jpeg", 0.7)); // 70% quality JPEG
-            };
-            img.onerror = reject;
-          };
-          reader.onerror = reject;
+    
+      try {
+        const formData = new FormData();
+    
+        // PRODUCT
+        formData.append("product", productName);
+    
+        // TEXT FIELDS
+        formData.append("firstName", document.getElementById("firstName").value);
+        formData.append("middleName", document.getElementById("middleName").value);
+        formData.append("lastName", document.getElementById("lastName").value);
+        formData.append("gender", document.getElementById("gender").value);
+        formData.append("eyeColor", document.getElementById("eyeColor").value);
+        formData.append("hairColor", document.getElementById("hairColor").value);
+        formData.append("birthday", document.getElementById("birthday").value);
+        formData.append("height", document.getElementById("height").value);
+        formData.append("weight", document.getElementById("weight").value);
+        formData.append("address", document.getElementById("address").value);
+        formData.append("city", document.getElementById("city").value);
+        formData.append("zip", document.getElementById("zip").value);
+        formData.append("restrictions", document.getElementById("restrictions").value);
+        formData.append("donor", document.getElementById("donor").value);
+        formData.append("dups", document.getElementById("dups").value);
+        formData.append("notes", document.getElementById("notes").value);
+    
+        // FILES
+        const headshot = document.getElementById("headshotUpload").files[0];
+        const sig = document.getElementById("sigUpload").files[0];
+    
+        if (headshot) {
+          formData.append("headshotUpload", headshot);
+        }
+    
+        if (sig) {
+          formData.append("sigUpload", sig);
+        }
+    
+        // SEND TO BACKEND
+        const response = await fetch(backendURL, {
+          method: "POST",
+          body: formData
         });
+    
+        const result = await response.json();
+    
+        if (!response.ok || !result.ok) {
+          throw new Error("Submission failed");
+        }
+    
+        alert("Order submitted successfully. Order ID: " + result.orderId);
+    
+        window.location.href = "index.html";
+    
+      } catch (err) {
+        console.error(err);
+        alert("There was an error submitting the order.");
       }
+    });
     
       const data = {
         productName: productName,
