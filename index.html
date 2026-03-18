@@ -1,346 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<title>Penn Fakes</title>
+  <style>
+    body {
+      background: #0b0b0b;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    .navbar {
+      background: #0b0b0b;
+      border-bottom: 1px solid #1f1f1f;
+    }
 
-<style>
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-body{
-background:#0b0b0b;
-color:white;
-font-family:Arial, Helvetica, sans-serif;
-}
+    .hero {
+      padding: 90px 0 50px;
+      text-align: center;
+    }
 
-.navbar{
-background:#0b0b0b;
-border-bottom:1px solid #1f1f1f;
-}
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
 
-.navbar-brand{
-font-weight:700;
-letter-spacing:1px;
-}
+    .hero p {
+      color: #aaaaaa;
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
-.hero{
-padding:100px 0;
-text-align:center;
-}
+    .faq-wrap {
+      max-width: 900px;
+      margin: 0 auto 80px;
+    }
 
-.hero h1{
-font-size:3rem;
-font-weight:700;
-margin-bottom:10px;
-}
+    .accordion-item {
+      background: #111111;
+      border: 1px solid #1f1f1f;
+      margin-bottom: 14px;
+      border-radius: 12px !important;
+      overflow: hidden;
+    }
 
-.hero p{
-color:#aaaaaa;
-}
+    .accordion-button {
+      background: #111111;
+      color: white;
+      font-weight: 600;
+      box-shadow: none !important;
+      padding: 20px 22px;
+    }
 
-.section-title{
-font-weight:600;
-margin-bottom:40px;
-}
+    .accordion-button:not(.collapsed) {
+      background: #151515;
+      color: white;
+    }
 
-.product-card{
-background:#111111;
-border:1px solid #1e1e1e;
-border-radius:10px;
-transition:0.2s;
-overflow:hidden;
-height:100%;
-}
+    .accordion-button::after {
+      filter: invert(1) grayscale(100%);
+    }
 
-.product-card:hover{
-transform:translateY(-4px);
-border-color:#333333;
-}
+    .accordion-body {
+      background: #151515;
+      color: #d0d0d0;
+      line-height: 1.7;
+      padding: 20px 22px;
+    }
 
-.product-card img{
-width:100%;
-height:260px;
-object-fit:cover;
-background:#1a1a1a;
-}
+    .section-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: #888888;
+      margin-bottom: 18px;
+    }
 
-.product-card h5 {
-  color: white;
-}
-
-.price{
-font-weight:700;
-font-size:1.1rem;
-margin-top:10px;
-}
-
-.price{
-  color:#f0f0f0;
-}
-
-.btn-custom{
-background:white;
-color:black;
-border:none;
-font-weight:600;
-border-radius:999px;
-padding:10px 18px;
-}
-
-.btn-custom:hover{
-background:#dddddd;
-color:black;
-}
-
-footer{
-margin-top:80px;
-padding:30px 0;
-border-top:1px solid #1f1f1f;
-color:#777777;
-font-size:14px;
-text-align:center;
-}
-
-</style>
-
+    footer {
+      margin-top: 80px;
+      padding: 30px 0;
+      border-top: 1px solid #1f1f1f;
+      color: #777777;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
 </head>
-
 <body>
 
-<nav class="navbar navbar-expand-lg">
-
-<div class="container">
-
-<a class="navbar-brand text-white text-decoration-none" href="index.html">Penn Fakes</a>
-
-</div>
-
-</nav>
-
-
-<section class="hero">
-
-<div class="container">
-
-<h1>Penn Fakes</h1>
-
-<p>Custom ID cards made to order</p>
-
-</div>
-
-</section>
-
-
-<section class="container">
-
-<h2 class="section-title">Products</h2>
-
-<div class="row g-4">
-
-
-<!-- Arizona -->
-
-<div class="col-md-4">
-
-<div class="card product-card">
-
-<img src="images/arizona.jpg" alt="Arizona">
-
-<div class="card-body">
-
-<h5>Arizona</h5>
-
-<div class="price">$85</div>
-
-<a href="card.html?product=arizona" class="btn btn-custom mt-3">Customize</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Colorado -->
-
-<div class="col-md-4">
-
-<div class="card product-card">
-
-<img src="images/colorado.jpg" alt="Colorado">
-
-<div class="card-body">
-
-<h5>Colorado</h5>
-
-<div class="price">$85</div>
-
-<a href="card.html?product=colorado" class="btn btn-custom mt-3">Customize</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Indiana -->
-
-<div class="col-md-4">
-
-<div class="card product-card">
-
-<img src="images/indiana.jpg" alt="Indiana">
-
-<div class="card-body">
-
-<h5>Indiana</h5>
-
-<div class="price">$85</div>
-
-<a href="card.html?product=indiana" class="btn btn-custom mt-3">Customize</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Michigan -->
-
-<div class="col-md-4">
-
-<div class="card product-card">
-
-<img src="images/michigan.jpg" alt="Michigan">
-
-<div class="card-body">
-
-<h5>Michigan</h5>
-
-<div class="price">$85</div>
-
-<a href="card.html?product=michigan" class="btn btn-custom mt-3">Customize</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Mississippi -->
-
-<div class="col-md-4">
-
-<div class="card product-card">
-
-<img src="images/mississippi.jpg" alt="Mississippi">
-
-<div class="card-body">
-
-<h5>Mississippi</h5>
-
-<div class="price">$85</div>
-
-<a href="card.html?product=mississippi" class="btn btn-custom mt-3">Customize</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Tennessee -->
-
-<div class="col-md-4">
-
-<div class="card product-card">
-
-<img src="images/tennessee.jpg" alt="Tennessee">
-
-<div class="card-body">
-
-<h5>Tennessee</h5>
-
-<div class="price">$85</div>
-
-<a href="card.html?product=tennessee" class="btn btn-custom mt-3">Customize</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- United Kingdom -->
-
-<div class="col-md-4">
-
-<div class="card product-card">
-
-<img src="images/uk.jpg" alt="uk">
-
-<div class="card-body">
-
-<h5>United Kingdom</h5>
-
-<div class="price">$85</div>
-
-<a href="card.html?product=uk" class="btn btn-custom mt-3">Customize</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Vermont -->
-
-<div class="col-md-4">
-
-<div class="card product-card">
-
-<img src="images/vermont.jpg" alt="Vermont">
-
-<div class="card-body">
-
-<h5>Vermont</h5>
-
-<div class="price">$85</div>
-
-<a href="card.html?product=vermont" class="btn btn-custom mt-3">Customize</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<footer>
-
-<div class="container">
-
-Penn Fakes • Add @pennfakes on Snapchat
-
-</div>
-
-</footer>
-
-
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand text-white text-decoration-none" href="index.html">FAQ</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Frequently Asked Questions</h1>
+      <p>
+        Find quick answers below. Click any question to expand it.
+      </p>
+    </div>
+  </section>
+
+  <section class="container faq-wrap">
+    <div class="section-title">General</div>
+
+    <div class="accordion" id="faqAccordion">
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            What is this site for?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            This is a sample FAQ page. You can replace this answer with your real explanation of what the site is for.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            How do I use this site?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Browse the questions, click to expand, and read the answers. You can organize these into sections later if you want.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            Who is this intended for?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            This answer can describe your audience, customers, users, or community.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            Where can I get more information?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            You can replace this with contact details, a social account, an email, or anything else you want people to use for follow-up.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+            Do you offer support or updates?
+          </button>
+        </h2>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Put your support policy, response times, update schedule, or any important expectations here.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      FAQ Page
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
